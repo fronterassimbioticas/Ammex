@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message = isset($_POST['message']) ? htmlspecialchars($_POST['message']) : '';
 
     // Email configuration
-    $to = 'fronterassimbioticas@gmail.com'; // Replace with your email address
+    $to = 'info@ammexservices.com'; // Replace with your email address
     $subjectEmail = 'Contact Form Submission: ' . $subject; // Use subject field
     $body = "Name: $name\nEmail: $email\nContact No.: $number\n\nMessage:\n$message";
     $headers = "From: $email";
