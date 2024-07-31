@@ -1,0 +1,324 @@
+/* Fonts and variables */
+@font-face {
+    font-family: 'Biryani';
+    src: url(fonts/Biryani-Regular.ttf);
+}
+@font-face {
+    font-family: 'Biryani Semi';
+    src: url(fonts/Biryani-SemiBold.ttf);
+}
+@font-face {
+    font-family: 'Biryani Bold';
+    src: url(fonts/Biryani-ExtraBold.ttf);
+}
+
+$Red: #FE3B1F;
+$sideGutters: 5%;
+$columnGutters: 30px;
+
+/* Font styling */
+h1, h2, h3, h6, .h6 li, .h7, .h7 li, a{
+    font-family: 'Biryani Bold';
+    margin: 0;
+}
+h5{
+    font-family: 'Biryani Semi';
+    margin: 0;
+}
+body, button, ul, li, h4, input, textarea, select{
+    font-family: 'Biryani';
+    margin: 0;
+}
+
+body, button, input, textarea, select{
+    font-size: 18px;
+    line-height: 1.2em;
+}
+p{
+    color: #202945;
+    margin: 0;
+    line-height: 1.5em;
+}
+a:not(.btn), .a{
+    color: $Red;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s ease all;
+    &:hover{
+        opacity: 0.5;
+        transition: 0.3s ease all;
+    }
+}
+h1{
+    font-size: clamp(2.1875rem, 1.6667rem + 2.7778vw, 5rem);
+    line-height: 1.2em;
+}
+h2{
+    font-size: clamp(1.6875rem, 1.3056rem + 2.037vw, 3.75rem);
+    line-height: 1.2em;
+}
+h3{
+    font-size: clamp(1.25rem, 1.0185rem + 1.2346vw, 2.5rem);
+    line-height: 1.2em;
+}
+h4{
+    font-size: clamp(1.25rem, 1.0185rem + 1.2346vw, 2.5rem);
+}
+h5{
+    font-size: clamp(1.0625rem, 0.912rem + 0.8025vw, 1.875rem);
+    line-height: 1.5em;
+}
+h6, .h6 li{
+    font-size: clamp(1.0625rem, 0.912rem + 0.8025vw, 1.875rem);
+    line-height: 1.2em;
+}
+@media(max-width: 768px){
+    body, button, input, textarea, select{
+        font-size: 16px;
+        line-height: 1.2em;
+    }
+}
+
+/* Colors */
+section{
+    h1, h2, h3, h4, h5, h6, .h7{
+        color: $Red;
+    }
+}
+.bg-red{
+    background-color: $Red;
+    *{
+        color: white
+    }
+}
+.black{
+    color: #202945;
+}
+
+
+/* Utilities */
+.text-center{
+    text-align: center;
+}
+.text-right{
+    text-align: right;
+}
+.flex{
+    display: flex;
+}
+.flex-wrap{
+    flex-wrap: wrap;
+}
+.v-align{
+    align-items: center;
+}
+.space-around{
+    justify-content: space-around !important;
+}
+.space-between{
+    justify-content: space-between;
+}
+.flex-column{
+    flex-direction: column;
+}
+.cover-width{
+    width: 100%;
+    margin-bottom: -6px;
+}
+.relative{
+    position: relative;
+}
+.smooth-transition{
+    transition: 0.3s ease all;
+}
+.desktop-hide{
+    display: none !important;
+}
+
+
+.videoWrapper {
+    position: relative;
+    width: 100%; // Responsive width
+    max-width: 600px; // Max width of video
+    aspect-ratio: 16 / 9; // Maintain aspect ratio
+  }
+  
+  .video {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+  
+  .playButton {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    background: rgba(0, 0, 0, 0.5); // Semi-transparent background for visibility
+    color: #fff; // White color for the play icon
+    border: none;
+    border-radius: 50%;
+    width: 80px; // Adjust size as needed
+    height: 80px; // Adjust size as needed
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10; // Ensure it is above the video
+    transition: background 0.3s ease;
+  }
+  
+  .playButton:hover {
+    background: rgba(0, 0, 0, 0.8); // Darker background on hover
+  }
+  
+
+
+@media(max-width: 990px){
+    .reverse{
+        flex-direction: column-reverse;
+        align-items: flex-start;
+    }
+    .mobile-hide{
+        display: none !important;
+    }
+    .desktop-hide{
+        display: block !important;
+    }
+}
+
+/* Components */
+a.btn, button{
+    display: inline-block;
+    background-color: $Red;
+    color: white;
+    border: 1px solid $Red;
+    padding: 10px 40px 4px;
+    text-decoration: none;
+    transition: 0.3s ease all;
+    &:hover{
+        background-color: white;
+        color: $Red;
+        transition: 0.3s ease all;
+    }
+    &.light{
+        background-color: white;
+        border-color: white;
+        color: $Red;
+        &:hover{
+            background-color: $Red;
+            color: white;
+        }
+    }
+    &.blue{
+        background-color: #202945;
+        border-color: #202945;
+        color: white;
+    }
+}
+@media(max-width: 990px){
+    a.btn, button{
+        padding: 10px 20px 4px;
+    }
+}
+input, textarea, select{
+    border: 1px solid $Red;
+    padding: 10px;
+    color: $Red;
+    &::placeholder{
+        color: $Red;
+    }
+}
+hr{
+    border-top: 1px solid $Red;
+    margin: 50px 0;
+}
+.check{
+    list-style: none;
+    padding-left: 30px;
+    li{
+        margin-bottom: 30px;
+    }
+    .checkMark{
+        margin-left: -30px;
+        margin-right: 10px;
+    }
+}
+
+/* Grid */
+/*header{
+    padding: 10px calc(#{$sideGutters} + #{$columnGutters});
+}*/
+footer{
+    h6, p, a{
+        color: $Red;
+        text-decoration: none;
+    }
+}
+
+
+/* Spacing */
+.pt0 { padding-top:    0; }
+.pt15{ padding-top: 15px; }
+.pt24{ padding-top: 24px; }
+.pt30{ padding-top: 30px; }
+.pt50{ padding-top: 50px; }
+
+.pb0{ padding-bottom: 0; }
+.pb30{ padding-bottom: 30px; }
+
+.p0{ padding: 0; }
+
+.mt30{ margin-top: 30px; }
+.mt50{ margin-top: 50px; }
+
+.ml-20{ margin-left: -20%; }
+
+.mb30{ margin-bottom: 30px; }
+
+/* HTML defaults modifications */
+html, body{
+    margin: 0;
+}
+img{ margin-bottom: -10px; }
+
+/* custom */
+.custom-row-1{
+    top: -240px;
+    margin-bottom: -240px;
+    .title{
+        display: flex; 
+        justify-content: space-between;
+        align-items: flex-end;
+        padding: 80px 50px;
+        h3{
+            color: #FE3B1F;
+        }
+    }
+}
+.leadership-background{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40%;
+}
+.map{
+    margin-top: -110px;
+    z-index: -1;
+}
+
+@media(max-width: 990px){
+    .custom-row-1{
+        box-sizing: border-box;
+        width: 100%;
+        flex-direction: column;
+        top: -200px;
+        margin-bottom: -200px;
+        padding: 50px 30px;
+        .title{
+            padding: 30px 20px;
+        }
+    }
+}

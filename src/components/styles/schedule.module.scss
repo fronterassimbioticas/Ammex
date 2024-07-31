@@ -1,0 +1,208 @@
+.container{
+    padding: 100px 0;
+    overflow: hidden;
+    position: relative;
+    *{
+        transition: 1.5s ease all;
+    }
+}
+.text{
+    z-index: 1;
+}
+.circle{
+    width: 130px;
+    height: 130px;
+    display: block;
+    margin: 0 auto;
+    border: 2px solid white;
+    border-radius: 100%;
+    text-align: center;
+    padding: 49px 0;
+    position: relative;
+    background-color: #FE3B1F;
+    z-index: 1;
+    &:hover{
+        background-color: #FE3B1F;
+        color: white !important;
+        border-color: white;
+    }
+    /*&::before{
+        content: '';
+        width: 0;
+        height: 0;
+        border-radius: 100%;
+        background-color: white;
+        position: absolute;
+        $middle: width / 2;
+        top: calc(50% - 5px);
+        left: calc(50% - 5px);
+        transition: 1s ease all;
+    }*/
+}
+.background{
+    background-color: white;
+    position: absolute;
+    border-radius: 100%;
+    z-index: 0;
+    transition: 5s ease all;
+    animation-name: shrinkOut;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    transition: 3s ease all;
+}
+.white{
+    *{
+        color: #FE3B1F !important;
+        transition: 2s ease all;
+    }
+    .circle{
+        border-color: #FE3B1F;
+    }
+    .background{
+        animation-name: growIn;
+        animation-duration: 1.5s;
+        animation-fill-mode: forwards;
+        transition: 3s ease all;
+    }
+    .dots div{
+        background-color: #FE3B1F;
+    }
+}
+.dots{
+    position: absolute;
+    display: flex;
+    width: calc(25% - 60px);
+    top: calc(50% - 2vw);
+    right: 0;
+    justify-content: space-between;
+    div{
+        background-color: white;
+        $w: 4vw;
+        width: calc(#{$w} - 10px);
+        height: calc(#{$w} - 10px);
+        max-width: 50px;
+        max-height: 50px;
+        border-radius: 100%;
+    }
+}
+.popUp{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.1);
+    top: 0;
+    z-index: 999;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: 0.5s ease all;
+    .card{
+        width: 85vw;
+        background-color: white;
+        padding: 40px 0px;
+        border-bottom: 30px solid #FE3B1F;
+        box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.25);
+        position: relative;
+        .close{
+            position: absolute;
+            right: 30px;
+            top: 35px;
+            background-color: transparent;
+            border: none;
+            padding: 0;
+            svg{
+                width: 25px;
+                height: 25px;
+            }
+        }
+        .st0{
+            fill:none;
+            stroke:#4A4F54;
+            stroke-width:2;
+            stroke-miterlimit:10;
+        }
+    }
+    
+    .form{
+        .alert{
+            border: 1px solid #FE3B1F;
+            padding: 15px 10px 10px;
+            margin: -50px 30px 10px;
+        }
+        /*padding: 0 30px;*/
+        input{
+            box-sizing: border-box;
+            width: calc(50% - 60px);
+            margin: 10px 30px;
+            &:focus-visible{
+                outline: none;
+            }
+        }
+        button{
+            margin: 50px 30px 0;
+            float: right;
+        }
+    }
+}
+.opened{
+    display: flex;
+    transition: 0.5s ease all;
+    animation-name: fadeIn;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    
+}
+@media(max-width: 990px){
+    .dots{ display: none; }
+    .popUp{
+        .form{
+            input{
+                width: calc(100% - 60px);
+                margin: 5px 30px;
+            }
+            button{
+                margin-top: 10px;
+            }
+        }
+    }
+}
+
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes growIn {
+    0%{
+        width: 0;
+        height: 0;
+        right: 50%;
+        top: 50%;
+    }
+    100%{
+        width: 200vw;
+        height: 200vw;
+        right: calc(50% - 100vw);
+        top: calc(50% - 100vw);
+    }
+}
+
+@keyframes shrinkOut {
+    0%{
+        width: 200vw;
+        height: 200vw;
+        right: calc(50% - 100vw);
+        top: calc(50% - 100vw);
+    }
+    100%{
+        width: 0;
+        height: 0;
+        right: 50%;
+        top: 50%;
+    }
+}

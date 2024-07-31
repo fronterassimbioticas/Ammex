@@ -1,0 +1,39 @@
+.container{
+    box-sizing: border-box;
+    position: relative;
+    padding: 250px 0;
+    min-height: calc(100vh - 70px);
+    background-size: 150%;
+    background-repeat: no-repeat;
+    transition: 0.3s ease-out all;
+    overflow: hidden;
+    *{
+        color: white;
+    }
+    .graphic{
+        position: absolute !important;
+        transition: 0.3s ease-out all;
+    }
+}
+.home{
+    background-size: 150%;
+    background-image: url('./../../images/AMX_Web-Home-01-BannerPrincipal.jpg');
+}
+.about{
+    background-image: url('./../../images/AMX_Web-About-01-BannerPrincipal.jpg');
+}
+.services{
+    background-image: url('./../../images/AMX_Web-FoodSupply-01-BannerPrincipal.jpg');
+}
+.facilities{
+    background-image: url('./../../images/AMX_Web-OurFacilities-01-BannerPrincipal.jpg');
+}
+.logistics{
+    background-image: url('./../../images/AMX_Web-3PLServices-01-BannerPrincipal.jpg');
+}
+
+@media(max-width: 990px){
+    .container{
+        background-size: 400%;
+    }
+}

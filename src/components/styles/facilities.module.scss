@@ -1,0 +1,36 @@
+.list{
+    list-style: none;
+    counter-reset: item;
+    padding-left: 40px;
+    li{
+        counter-increment: item;
+        margin-bottom: 25px !important;
+        .active{
+            color: #202945;
+        }
+    }
+    li:before{
+        content: counter(item);
+        background-color: #FE3B1F;
+        color: white;
+        width: 30px;
+        height: 30px;
+        border-radius: 100%;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: -40px;
+        margin-right: 10px;
+    }
+}
+
+@media(max-width: 990px){
+    .list{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        li{
+            width: calc(50% - 20px);
+        }
+    }
+}
