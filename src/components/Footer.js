@@ -54,7 +54,7 @@ function Footer(props){
             </Row>
             <Row padding="small">
                 <Column className={ footerStyles.legal }>
-                <p>&#169; 2021 Ammex. All Rights Reserved.</p>
+                <p>&#169; 2024 Ammex. All Rights Reserved.</p>
                 <div>
                     {/* <a href="###" className={ footerStyles.social }>
                         <StaticImage
